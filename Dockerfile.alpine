@@ -1,0 +1,51 @@
+FROM python:3.9.0-alpine
+
+LABEL org.opencontainers.image.title="haxorof/ansible-base" \
+      org.opencontainers.image.description="Ansible Base + additions" \
+      org.opencontainers.image.licenses="MIT"
+
+ARG ansible_version
+ARG docker_version
+ARG gosu_version
+
+ENV LANG en_US.UTF-8
+ENV LC_ALL en_US.UTF-8
+
+ONBUILD USER root
+
+COPY requirements/requirements-${ansible_version}.txt ./requirements.txt
+
+RUN apk update \
+    && apk add --no-cache linux-headers \
+    build-base \
+    libffi-dev \
+    openssl-dev \
+    openssh \
+    sshpass \
+    git \
+    sudo \
+    tzdata \
+    # install gosu for a better su+exec command (remove sudo if this works)
+    && wget -O /usr/bin/gosu "https://github.com/tianon/gosu/releases/download/$gosu_version/gosu-amd64" \
+    && chmod +x /usr/bin/gosu \
+    && gosu nobody true \
+    && python3 -m pip install --no-cache-dir --upgrade pip \
+    && python3 -m pip install --no-cache-dir -r requirements.txt \
+    && wget -O - https://download.docker.com/linux/static/stable/x86_64/docker-${docker_version}.tgz | tar -xz -C /usr/lib \
+    && ln -s /usr/lib/docker/docker /usr/bin/docker \
+    && mkdir -p /etc/ansible/roles \
+    && echo 'localhost ansible_connection=local ansible_python_interpreter=/usr/local/bin/python3' > /etc/ansible/hosts \
+    && rm -rf /var/cache/apk/* \
+    && rm -rf /root/.cache \
+    && adduser -u 1000 -D ansible-1000 \
+    && adduser -u 1001 -D ansible-1001 \
+    && adduser -u 10000 -D ansible-10000 \
+    && echo 'ansible-1000   ALL=(ALL) NOPASSWD:ALL' > /etc/sudoers.d/ansible \
+    && echo 'ansible-1001   ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers.d/ansible \
+    && echo 'ansible-10000  ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers.d/ansible
+
+WORKDIR /mnt
+
+USER ansible-10000
+
+CMD [ "ansible-playbook", "playbook.yml" ]
