@@ -4,7 +4,7 @@
 [![License](https://img.shields.io/github/license/haxorof/docker-ansible-base)](https://hub.docker.com/r/haxorof/ansible-base/)
 [![CI](https://github.com/haxorof/docker-ansible-base/workflows/CI/badge.svg)](https://github.com/haxorof/docker-ansible-base/actions?query=workflow%3ACI)
 
-Ansible with additions.
+Ansible Base with additions.
 
 ## Simple Tags
 
