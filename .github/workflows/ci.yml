@@ -2,10 +2,10 @@ name: CI
 on:
   push:
     branches:
-      - master
+      - main
   pull_request:
     branches:
-      - master
+      - main
   schedule:
     - cron:  '0 0 * * 0'
 
@@ -66,7 +66,7 @@ jobs:
           tags: haxorof/ansible-base:${{ steps.prep.outputs.tag }}
           context: .
           file: ./Dockerfile.${{ matrix.os }}
-          push: ${{ endsWith(github.ref, '/master') }}
+          push: ${{ endsWith(github.ref, '/main') }}
 
   update_docker_hub_description:
     needs: build_push
