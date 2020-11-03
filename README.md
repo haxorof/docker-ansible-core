@@ -6,6 +6,8 @@
 
 Ansible Base with additions.
 
+If you find bugs or got improvements of the container, feel free to submit it [here](https://github.com/haxorof/docker-ansible-base/issues).
+
 ## Simple Tags
 
 - `v2.10-alpine`
