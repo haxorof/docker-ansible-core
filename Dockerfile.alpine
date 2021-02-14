@@ -4,7 +4,6 @@ LABEL org.opencontainers.image.title="haxorof/ansible-base" \
       org.opencontainers.image.description="Ansible Base + additions" \
       org.opencontainers.image.licenses="MIT"
 
-ARG ansible_version
 ARG docker_version
 ARG gosu_version
 
@@ -13,7 +12,7 @@ ENV LC_ALL en_US.UTF-8
 
 ONBUILD USER root
 
-COPY requirements/requirements-${ansible_version}.txt ./requirements.txt
+COPY requirements/requirements.txt ./requirements.txt
 
 RUN apk update \
     && apk add --no-cache linux-headers \
@@ -25,6 +24,7 @@ RUN apk update \
     git \
     sudo \
     tzdata \
+    cargo \
     # install gosu for a better su+exec command (remove sudo if this works)
     && wget -O /usr/bin/gosu "https://github.com/tianon/gosu/releases/download/$gosu_version/gosu-amd64" \
     && chmod +x /usr/bin/gosu \

@@ -23,7 +23,6 @@ If you find bugs or got improvements of the container, feel free to submit it [h
 - `latest-ubuntu`
   - `v2.10-ubuntu`
 
-
 ## Additions
 
 ### Users/Groups
