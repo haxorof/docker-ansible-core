@@ -36,7 +36,7 @@ jobs:
           if [[ "$MATRIX_OS" == "$LATEST_OS" ]]; then
             TAGS="${TAGS},${IMAGE_NAME}:$MATRIX_VERSION"
             if [[ "$MATRIX_VERSION" == "$LATEST_VERSION" ]]; then
-              TAGS="${TAGS},${IMAGE_NAME}:latest"
+              TAGS="${TAGS},${IMAGE_NAME}:latest-${MATRIX_OS},${IMAGE_NAME}:latest"
             fi
           elif [[ "$MATRIX_VERSION" == "$LATEST_VERSION" ]]; then
             TAGS="${TAGS},${IMAGE_NAME}:latest-${MATRIX_OS}"
