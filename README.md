@@ -1,15 +1,16 @@
-# Ansible Base + additions
+# Ansible Core + additions
 
 [![Docker Pulls](https://img.shields.io/docker/pulls/haxorof/ansible-base)](https://hub.docker.com/r/haxorof/ansible-base/)
 [![License](https://img.shields.io/github/license/haxorof/docker-ansible-base)](https://hub.docker.com/r/haxorof/ansible-base/)
 [![CI](https://github.com/haxorof/docker-ansible-base/workflows/CI/badge.svg)](https://github.com/haxorof/docker-ansible-base/actions?query=workflow%3ACI)
 
-Ansible Base with additions.
+Ansible Core with additions.
 
 If you find bugs or got improvements of the container, feel free to submit it [here](https://github.com/haxorof/docker-ansible-base/issues).
 
 ## Simple Tags
 
+- `v2.10-almalinux8`
 - `v2.10-alpine`
 - `v2.10-centos7`
 - `v2.10-ubuntu`
@@ -18,6 +19,8 @@ If you find bugs or got improvements of the container, feel free to submit it [h
 
 - `v2.10`, `latest-alpine`, `latest`
   - `v2.10-alpine`
+- `latest-almalinux8`
+  - `v2.10-almalinux8`
 - `latest-centos7`
   - `v2.10-centos7`
 - `latest-ubuntu`

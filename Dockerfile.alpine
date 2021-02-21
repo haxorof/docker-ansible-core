@@ -1,7 +1,7 @@
 FROM python:3.9.1-alpine
 
 LABEL org.opencontainers.image.title="haxorof/ansible-base" \
-      org.opencontainers.image.description="Ansible Base + additions" \
+      org.opencontainers.image.description="Ansible Core + additions" \
       org.opencontainers.image.licenses="MIT"
 
 ARG docker_version

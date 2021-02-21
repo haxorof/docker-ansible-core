@@ -1,4 +1,4 @@
-FROM ubuntu:20.04
+FROM almalinux/almalinux:8
 
 LABEL org.opencontainers.image.title="haxorof/ansible-base" \
       org.opencontainers.image.description="Ansible Core + additions" \
@@ -7,26 +7,27 @@ LABEL org.opencontainers.image.title="haxorof/ansible-base" \
 ARG docker_version
 ARG gosu_version
 
-ENV DEBIAN_FRONTEND=noninteractive
-ENV DEFAULT_LOCAL_TMP=/var/tmp/.ansible/tmp
+ENV LANG en_US.UTF-8
+ENV LC_ALL en_US.UTF-8
 
 ONBUILD USER root
 
 COPY requirements/requirements.txt ./requirements.txt
 
-RUN apt-get clean \
-    && apt-get -y update \
-    && apt-get -y install apt-utils \
-    && apt-get -y upgrade \
-    && apt-get -y install \
+RUN dnf install -y epel-release \
+    && dnf clean all \
+    && dnf makecache \
+    && dnf upgrade -y \
+    && dnf install -y \
+    openssh \
     sshpass \
     git \
     sudo \
     python3-pip \
     wget \
     curl \
+    glibc-langpack-en \
     tzdata \
-    cargo \
     # install gosu for a better su+exec command (remove sudo if this works)
     && wget -O /usr/bin/gosu "https://github.com/tianon/gosu/releases/download/$gosu_version/gosu-amd64" \
     && chmod +x /usr/bin/gosu \
@@ -37,13 +38,15 @@ RUN apt-get clean \
     && ln -s /usr/lib/docker/docker /usr/bin/docker \
     && mkdir -p /etc/ansible/roles \
     && echo 'localhost ansible_connection=local ansible_python_interpreter=/usr/bin/python3' > /etc/ansible/hosts \
-    && apt-get clean \
-    && useradd -m -u 1000 ansible-1000 \
-    && useradd -m -u 1001 ansible-1001 \
-    && useradd -m -u 10000 ansible-10000 \
+    && dnf clean all \
+    && rm -rf /var/cache/yum \
+    && useradd -u 1000 ansible-1000 \
+    && useradd -u 1001 ansible-1001 \
+    && useradd -u 10000 ansible-10000 \
     && echo 'ansible-1000   ALL=(ALL) NOPASSWD:ALL' > /etc/sudoers.d/ansible \
     && echo 'ansible-1001   ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers.d/ansible \
     && echo 'ansible-10000  ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers.d/ansible
+
 
 WORKDIR /mnt
 
