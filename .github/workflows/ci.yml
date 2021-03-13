@@ -10,7 +10,7 @@ on:
     - cron:  '0 1 * * 0'
 
 env:
-  IMAGE_NAME: haxorof/ansible-base
+  IMAGE_NAME: haxorof/ansible-core
 
 jobs:
   build_push:
@@ -18,8 +18,8 @@ jobs:
     env:
       LATEST_OS: alpine
       LATEST_VERSION: v2.10
-      DOCKER_CLI_VERSION: "20.10.3"
-      GOSU_VERSION: "1.12"    
+      DOCKER_CLI_VERSION: "20.10.5"
+      GOSU_VERSION: "1.12"
     strategy:
       matrix:
         os: [almalinux8, alpine, centos7, ubuntu]

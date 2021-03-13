@@ -1,12 +1,12 @@
 # Ansible Core + additions
 
-[![Docker Pulls](https://img.shields.io/docker/pulls/haxorof/ansible-base)](https://hub.docker.com/r/haxorof/ansible-base/)
-[![License](https://img.shields.io/github/license/haxorof/docker-ansible-base)](https://hub.docker.com/r/haxorof/ansible-base/)
-[![CI](https://github.com/haxorof/docker-ansible-base/workflows/CI/badge.svg)](https://github.com/haxorof/docker-ansible-base/actions?query=workflow%3ACI)
+[![Docker Pulls](https://img.shields.io/docker/pulls/haxorof/ansible-core)](https://hub.docker.com/r/haxorof/ansible-core/)
+[![License](https://img.shields.io/github/license/haxorof/docker-ansible-core)](https://hub.docker.com/r/haxorof/ansible-core/)
+[![CI](https://github.com/haxorof/docker-ansible-core/workflows/CI/badge.svg)](https://github.com/haxorof/docker-ansible-core/actions?query=workflow%3ACI)
 
 Ansible Core with additions.
 
-If you find bugs or got improvements of the container, feel free to submit it [here](https://github.com/haxorof/docker-ansible-base/issues).
+If you find bugs or got improvements of the container, feel free to submit it [here](https://github.com/haxorof/docker-ansible-core/issues).
 
 ## Simple Tags
 
@@ -57,13 +57,13 @@ Container will run as user `ansible-10000` by default. However, when you build y
 Below assume a `playbook.yml` file is located in current directory:
 
 ```console
-# docker run --rm -v ${PWD}:/mnt haxorof/ansible-base
+# docker run --rm -v ${PWD}:/mnt haxorof/ansible-core
 ```
 
 To override the default command set you can just add your own arguments after the images name:
 
 ```console
-# docker run --rm -v ${PWD}:/mnt haxorof/ansible-base ansible -m setup -c local localhost
+# docker run --rm -v ${PWD}:/mnt haxorof/ansible-core ansible -m setup -c local localhost
 ```
 
 ## How to use Docker CLI with Ansible to target Python container
@@ -77,5 +77,5 @@ Start a Python container in a terminal:
 In a second terminal run the following which will do an Ansible ping to that Python container:
 
 ```console
-# docker run --rm -v /var/run/docker.sock:/var/run/docker.sock haxorof/ansible-base sh -c "echo 'target ansible_connection=docker' > hosts && ansible -m ping -i hosts all"
+# docker run --rm -v /var/run/docker.sock:/var/run/docker.sock haxorof/ansible-core sh -c "echo 'target ansible_connection=docker' > hosts && ansible -m ping -i hosts all"
 ```

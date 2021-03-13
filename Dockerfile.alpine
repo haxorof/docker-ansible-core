@@ -1,6 +1,6 @@
 FROM python:3.9.2-alpine
 
-LABEL org.opencontainers.image.title="haxorof/ansible-base" \
+LABEL org.opencontainers.image.title="haxorof/ansible-core" \
       org.opencontainers.image.description="Ansible Core + additions" \
       org.opencontainers.image.licenses="MIT"
 
