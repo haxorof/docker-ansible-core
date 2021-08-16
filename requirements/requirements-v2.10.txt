@@ -1,1 +1,1 @@
-ansible-base==2.10.12
+ansible-base==2.10.13
