@@ -17,13 +17,13 @@ jobs:
     runs-on: ubuntu-latest
     env:
       LATEST_OS: alpine
-      LATEST_VERSION: v2.11
+      LATEST_VERSION: v2.12
       DOCKER_CLI_VERSION: "20.10.6"
       GOSU_VERSION: "1.12"
     strategy:
       matrix:
         os: [almalinux8, alpine, ubuntu]
-        version: [v2.10, v2.11]
+        version: [v2.10, v2.11, v2.12]
     steps:
       - name: Checkout
         uses: actions/checkout@v2.4.0
