@@ -18,7 +18,7 @@ jobs:
     env:
       LATEST_OS: alpine
       LATEST_VERSION: v2.12
-      DOCKER_CLI_VERSION: "20.10.6"
+      DOCKER_CLI_VERSION: "20.10.9"
       GOSU_VERSION: "1.12"
     strategy:
       matrix:
