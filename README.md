@@ -25,6 +25,8 @@ If you find bugs or got improvements of the container, feel free to submit it [h
 
 - `v2.12`, `latest-alpine`, `latest`
   - `v2.12-alpine`
+- `v2.11`
+  - `v2.11-alpine`
 - `latest-almalinux8`
   - `v2.11-almalinux8`
 - `latest-ubuntu`

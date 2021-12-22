@@ -17,8 +17,7 @@ env:
   GOSU_VERSION: "1.12"
 
 jobs:
-  # < Python 3.8
-  build_push_2_11_and_earlier:
+  build_push_before_python38:
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -80,9 +79,8 @@ jobs:
           file: ./Dockerfile.${{ matrix.os }}
           push: ${{ endsWith(github.ref, '/main') }}
 
-  # >= Python 3.8
-  build_push_2_12_later:
-    needs: build_push_2_11_and_earlier
+  build_push_python38_and_later:
+    needs: build_push_before_python38
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -145,7 +143,7 @@ jobs:
           push: ${{ endsWith(github.ref, '/main') }}
 
   update_docker_hub_description:
-    needs: build_push_2_12_later
+    needs: build_push_python38_and_later
     runs-on: ubuntu-latest
     if: ${{ endsWith(github.ref, '/main') }}
     steps:
