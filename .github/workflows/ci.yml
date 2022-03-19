@@ -32,7 +32,9 @@ jobs:
         run: |
           cp requirements/requirements-${MATRIX_VERSION}.txt requirements/requirements.txt
           TAGS="${IMAGE_NAME}:${MATRIX_VERSION}-${MATRIX_OS}"
-          if [[ "$MATRIX_OS" == "almalinux8" && "$MATRIX_VERSION" == "v2.11" ]]; then
+          if [[ "$MATRIX_OS" == "$LATEST_OS" ]]; then
+            TAGS="${TAGS},${IMAGE_NAME}:$MATRIX_VERSION"
+          elif [[ "$MATRIX_OS" == "almalinux8" && "$MATRIX_VERSION" == "v2.11" ]]; then
             TAGS="${TAGS},${IMAGE_NAME}:latest-${MATRIX_OS}"
           fi
           echo "::set-output name=tags::${TAGS}"
