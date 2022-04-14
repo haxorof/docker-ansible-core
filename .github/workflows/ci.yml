@@ -13,7 +13,7 @@ env:
   IMAGE_NAME: haxorof/ansible-core
   LATEST_OS: alpine
   LATEST_VERSION: v2.12
-  DOCKER_CLI_VERSION: "20.10.13"
+  DOCKER_CLI_VERSION: "20.10.14"
   GOSU_VERSION: "1.14"
 
 jobs:
