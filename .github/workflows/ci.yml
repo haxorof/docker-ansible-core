@@ -10,7 +10,7 @@ on:
     - cron:  '0 1 * * 0'
 
 env:
-  IMAGE_NAME: haxorof/ansible-core
+  IMAGE_NAME: sjoshi10/ansible-core
   LATEST_OS: alpine
   LATEST_VERSION: v2.13
   DOCKER_CLI_VERSION: "20.10.14"
