@@ -14,7 +14,7 @@ ONBUILD USER root
 
 COPY requirements/requirements.txt ./requirements.txt
 
-RUN dnf install -y epel-release \
+RUN microdnf install -y epel-release \
     && microdnf clean all \
     && microdnf makecache \
     && microdnf upgrade -y \
