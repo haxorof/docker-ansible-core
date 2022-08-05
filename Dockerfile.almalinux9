@@ -25,7 +25,6 @@ RUN microdnf install -y epel-release \
     sudo \
     python3-pip \
     wget \
-    curl \
     glibc-langpack-en \
     tzdata \
     # install gosu for a better su+exec command (remove sudo if this works)
