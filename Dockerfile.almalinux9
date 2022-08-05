@@ -8,7 +8,7 @@ ARG docker_version
 ARG gosu_version
 
 ENV LANG en_US.UTF-8
-ENV LC_ALL en_US.UTF-8
+#ENV LC_ALL en_US.UTF-8
 
 ONBUILD USER root
 
@@ -24,16 +24,16 @@ RUN microdnf install -y epel-release \
     git \
     sudo \
     python3-pip \
-    wget \
+    tar \
     glibc-langpack-en \
     tzdata \
     # install gosu for a better su+exec command (remove sudo if this works)
-    && wget -O /usr/bin/gosu "https://github.com/tianon/gosu/releases/download/$gosu_version/gosu-amd64" \
+    && curl -o /usr/bin/gosu "https://github.com/tianon/gosu/releases/download/$gosu_version/gosu-amd64" \
     && chmod +x /usr/bin/gosu \
     && gosu nobody true \
     && python3 -m pip install --no-cache-dir --upgrade pip \
     && python3 -m pip install --no-cache-dir -r requirements.txt \
-    && wget -O - https://download.docker.com/linux/static/stable/x86_64/docker-${docker_version}.tgz | tar -xz -C /usr/lib \
+    && curl https://download.docker.com/linux/static/stable/x86_64/docker-${docker_version}.tgz | tar -xz -C /usr/lib \
     && ln -s /usr/lib/docker/docker /usr/bin/docker \
     && mkdir -p /etc/ansible/roles \
     && echo 'localhost ansible_connection=local ansible_python_interpreter=/usr/bin/python3' > /etc/ansible/hosts \
