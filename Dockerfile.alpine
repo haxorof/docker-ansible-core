@@ -35,6 +35,7 @@ RUN apk update \
     && ln -s /usr/lib/docker/docker /usr/bin/docker \
     && mkdir -p /etc/ansible/roles \
     && echo 'localhost ansible_connection=local ansible_python_interpreter=/usr/local/bin/python3' > /etc/ansible/hosts \
+    && apk del --no-cache build-base libffi-dev openssl-dev \
     && rm -rf /var/cache/apk/* \
     && rm -rf /root/.cache \
     && adduser -u 1000 -D ansible-1000 \
