@@ -1,4 +1,4 @@
-FROM almalinux:9.0-minimal-20220706
+FROM almalinux:9.0-20220706
 
 LABEL org.opencontainers.image.title="haxorof/ansible-core" \
       org.opencontainers.image.description="Ansible Core + additions" \
@@ -8,23 +8,25 @@ ARG docker_version
 ARG gosu_version
 
 ENV LANG en_US.UTF-8
-#ENV LC_ALL en_US.UTF-8
+ENV LC_ALL en_US.UTF-8
 
 ONBUILD USER root
 
 COPY requirements/requirements.txt ./requirements.txt
 
-RUN microdnf install -y epel-release \
-    && microdnf clean all \
-    && microdnf makecache \
-    && microdnf upgrade -y \
-    && microdnf install -y \
+RUN dnf install -y epel-release \
+    && dnf clean all \
+    && dnf makecache \
+    && dnf upgrade -y \
+    && dnf install -y \
     openssh \
     sshpass \
     git \
     sudo \
     python3-pip \
     tar \
+    wget \
+    curl \
     glibc-langpack-en \
     tzdata \
     # install gosu for a better su+exec command (remove sudo if this works)
@@ -37,7 +39,7 @@ RUN microdnf install -y epel-release \
     && ln -s /usr/lib/docker/docker /usr/bin/docker \
     && mkdir -p /etc/ansible/roles \
     && echo 'localhost ansible_connection=local ansible_python_interpreter=/usr/bin/python3' > /etc/ansible/hosts \
-    && microdnf clean all \
+    && dnf clean all \
     && rm -rf /var/cache/yum \
     && useradd -u 1000 ansible-1000 \
     && useradd -u 1001 ansible-1001 \
