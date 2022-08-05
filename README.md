@@ -19,7 +19,6 @@ If you find bugs or got improvements of the container, feel free to submit it [h
 - `v2.12-alpine`
 - `v2.12-ubuntu`
 - `v2.11-almalinux`
-- `v2.11-almalinux8`
 - `v2.11-alpine`
 - `v2.11-ubuntu`
 
@@ -33,8 +32,6 @@ If you find bugs or got improvements of the container, feel free to submit it [h
   - `v2.11-alpine`
 - `latest-almalinux`
   - `v2.13-almalinux`
-- `latest-almalinux8`
-  - `v2.11-almalinux8`
 - `latest-ubuntu`
   - `v2.13-ubuntu`
 
