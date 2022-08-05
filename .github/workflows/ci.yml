@@ -21,7 +21,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        os: [almalinux8, almalinux9, alpine, ubuntu]
+        os: [almalinux8, almalinux, alpine, ubuntu]
         version: [v2.11]
     steps:
       - name: Checkout
@@ -81,7 +81,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        os: [almalinux9, alpine, ubuntu]
+        os: [almalinux, alpine, ubuntu]
         version: [v2.12, v2.13]
     steps:
       - name: Checkout

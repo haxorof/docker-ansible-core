@@ -12,10 +12,10 @@ If you find bugs or got improvements of the container, feel free to submit it [h
 
 ## Simple Tags
 
-- `v2.13-almalinux9`
+- `v2.13-almalinux`
 - `v2.13-alpine`
 - `v2.13-ubuntu`
-- `v2.12-almalinux9`
+- `v2.12-almalinux`
 - `v2.12-alpine`
 - `v2.12-ubuntu`
 - `v2.11-almalinux8`
@@ -30,8 +30,8 @@ If you find bugs or got improvements of the container, feel free to submit it [h
   - `v2.12-alpine`
 - `v2.11`
   - `v2.11-alpine`
-- `latest-almalinux9`
-  - `v2.13-almalinux9`
+- `latest-almalinux`
+  - `v2.13-almalinux`
 - `latest-almalinux8`
   - `v2.11-almalinux8`
 - `latest-ubuntu`
