@@ -33,9 +33,9 @@ If you find bugs or got improvements of the container, feel free to submit it [h
 - `v2.11`
   - `v2.11-alpine`
 - `latest-almalinux`
-  - `v2.13-almalinux`
+  - `v2.14-almalinux`
 - `latest-ubuntu`
-  - `v2.13-ubuntu`
+  - `v2.14-ubuntu`
 
 ## Additions
 
