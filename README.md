@@ -12,19 +12,21 @@ If you find bugs or got improvements of the container, feel free to submit it [h
 
 ## Simple Tags
 
+- `v2.14-almalinux`
+- `v2.14-alpine`
+- `v2.14-ubuntu`
 - `v2.13-almalinux`
 - `v2.13-alpine`
 - `v2.13-ubuntu`
 - `v2.12-almalinux`
 - `v2.12-alpine`
 - `v2.12-ubuntu`
-- `v2.11-almalinux`
-- `v2.11-alpine`
-- `v2.11-ubuntu`
 
 ## Shared Tags
 
-- `v2.13`, `latest-alpine`, `latest`
+- `v2.14`, `latest-alpine`, `latest`
+  - `v2.14-alpine`
+- `v2.13`
   - `v2.13-alpine`
 - `v2.12`
   - `v2.12-alpine`
