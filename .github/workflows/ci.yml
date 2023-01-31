@@ -86,7 +86,6 @@ jobs:
     permissions:
       contents: write
       pull-requests: write
-      workflows: write
     steps:
       - name: Dependabot metadata
         id: dependabot-metadata
