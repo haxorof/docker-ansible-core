@@ -86,3 +86,4 @@ In a second terminal run the following which will do an Ansible ping to that Pyt
 ```console
 # docker run --rm -v /var/run/docker.sock:/var/run/docker.sock haxorof/ansible-core sh -c "echo 'target ansible_connection=docker' > hosts && ansible -m ping -i hosts all"
 ```
+
