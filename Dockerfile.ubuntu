@@ -47,7 +47,7 @@ RUN apt-get clean \
     && echo 'ansible-10000  ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers.d/ansible
 
 RUN gem install bundler
-
+RUN pip3 install jmespath
 WORKDIR /mnt
 
 USER ansible-10000
