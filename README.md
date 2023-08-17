@@ -10,32 +10,33 @@ Ansible Core with additions.
 
 If you find bugs or got improvements of the container, feel free to submit it [here](https://github.com/haxorof/docker-ansible-core/issues).
 
+This repos stop supporting versions as it gets EOL according to [Ansible - Releases and maintenance](https://docs.ansible.com/ansible/latest/reference_appendices/release_and_maintenance.html).
+
+
 ## Simple Tags
 
+- `v2.15-almalinux`
+- `v2.15-alpine`
+- `v2.15-ubuntu`
 - `v2.14-almalinux`
 - `v2.14-alpine`
 - `v2.14-ubuntu`
 - `v2.13-almalinux`
 - `v2.13-alpine`
 - `v2.13-ubuntu`
-- `v2.12-almalinux`
-- `v2.12-alpine`
-- `v2.12-ubuntu`
 
 ## Shared Tags
 
-- `v2.14`, `latest-alpine`, `latest`
+- `v2.15`, `latest-alpine`, `latest`
+  - `v2.15-alpine`
+- `v2.14`
   - `v2.14-alpine`
 - `v2.13`
   - `v2.13-alpine`
-- `v2.12`
-  - `v2.12-alpine`
-- `v2.11`
-  - `v2.11-alpine`
 - `latest-almalinux`
-  - `v2.14-almalinux`
+  - `v2.15-almalinux`
 - `latest-ubuntu`
-  - `v2.14-ubuntu`
+  - `v2.15-ubuntu`
 
 ## Additions
 
