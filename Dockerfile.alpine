@@ -14,7 +14,11 @@ ONBUILD USER root
 
 COPY requirements/requirements.txt ./requirements.txt
 
-RUN apk update \
+RUN \
+    # Instructions for installing 1password cli: https://developer.1password.com/docs/cli/get-started/ 
+    echo https://downloads.1password.com/linux/alpinelinux/stable/ >> /etc/apk/repositories \
+    && wget "https://downloads.1password.com/linux/keys/alpinelinux/support@1password.com-61ddfc31.rsa.pub" -P /etc/apk/keys \
+    && apk update \
     && apk add --no-cache linux-headers \
     build-base \
     libffi-dev \
@@ -25,6 +29,7 @@ RUN apk update \
     sudo \
     tzdata \
     cargo \
+    1password-cli \
     # install gosu for a better su+exec command (remove sudo if this works)
     && wget -O /usr/bin/gosu "https://github.com/tianon/gosu/releases/download/$gosu_version/gosu-amd64" \
     && chmod +x /usr/bin/gosu \
