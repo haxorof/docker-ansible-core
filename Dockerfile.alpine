@@ -1,4 +1,4 @@
-FROM python:3.11.4-alpine
+FROM python:3.11.5-alpine
 
 LABEL org.opencontainers.image.title="haxorof/ansible-core" \
       org.opencontainers.image.description="Ansible Core + additions" \
