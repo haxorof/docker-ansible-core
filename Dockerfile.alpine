@@ -29,6 +29,7 @@ RUN \
     sudo \
     tzdata \
     cargo \
+    rsync \
     1password-cli \
     # install gosu for a better su+exec command (remove sudo if this works)
     && wget -O /usr/bin/gosu "https://github.com/tianon/gosu/releases/download/$gosu_version/gosu-amd64" \
