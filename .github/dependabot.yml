@@ -16,9 +16,9 @@ updates:
       - dependency-name: "centos*"
     assignees:
       - "haxorof"
-  # Maintain dependencies for Python PiP (v2.11)
+  # Maintain dependencies for Python PiP (v2.13)
   - package-ecosystem: "pip"
-    directory: "/requirements/v2.11"
+    directory: "/requirements/v2.13"
     schedule:
       interval: "daily"
     assignees:
@@ -26,9 +26,9 @@ updates:
     ignore:
       - dependency-name: "*"
         update-types: ["version-update:semver-minor", "version-update:semver-major"]
-  # Maintain dependencies for Python PiP (v2.12)
+  # Maintain dependencies for Python PiP (v2.14)
   - package-ecosystem: pip
-    directory: "/requirements/v2.12"
+    directory: "/requirements/v2.14"
     schedule:
       interval: daily
     assignees:
@@ -36,9 +36,9 @@ updates:
     ignore:
       - dependency-name: "*"
         update-types: ["version-update:semver-minor", "version-update:semver-major"]
-  # Maintain dependencies for Python PiP (v2.13)
+  # Maintain dependencies for Python PiP (v2.15)
   - package-ecosystem: pip
-    directory: "/requirements/v2.13"
+    directory: "/requirements/v2.15"
     schedule:
       interval: daily
     assignees:
