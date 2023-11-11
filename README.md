@@ -15,6 +15,9 @@ This repos stop supporting versions as it gets EOL according to [Ansible - Relea
 
 ## Simple Tags
 
+- `v2.16-almalinux`
+- `v2.16-alpine`
+- `v2.16-ubuntu`
 - `v2.15-almalinux`
 - `v2.15-alpine`
 - `v2.15-ubuntu`
@@ -27,7 +30,9 @@ This repos stop supporting versions as it gets EOL according to [Ansible - Relea
 
 ## Shared Tags
 
-- `v2.15`, `latest-alpine`, `latest`
+- `v2.16`, `latest-alpine`, `latest`
+  - `v2.16-alpine`
+- `v2.15`
   - `v2.15-alpine`
 - `v2.14`
   - `v2.14-alpine`

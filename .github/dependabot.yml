@@ -46,3 +46,13 @@ updates:
     ignore:
       - dependency-name: "*"
         update-types: ["version-update:semver-minor", "version-update:semver-major"]
+  # Maintain dependencies for Python PiP (v2.16)
+  - package-ecosystem: pip
+    directory: "/requirements/v2.16"
+    schedule:
+      interval: daily
+    assignees:
+      - "haxorof"
+    ignore:
+      - dependency-name: "*"
+        update-types: ["version-update:semver-minor", "version-update:semver-major"]
