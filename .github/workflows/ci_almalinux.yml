@@ -22,7 +22,7 @@ jobs:
     strategy:
       matrix:
         os: [almalinux]
-        version: [v2.13, v2.14, v2.15]
+        version: [v2.14, v2.15]
     steps:
       - name: Checkout
         uses: actions/checkout@v4
