@@ -23,7 +23,7 @@ updates:
       - "haxorof"
     ignore:
       - dependency-name: "*"
-        update-types: ["version-update:semver-minor"]
+        update-types: ["version-update:semver-minor", "version-update:semver-major"]
   # Maintain dependencies for Python PiP (v2.15)
   - package-ecosystem: pip
     directory: "/requirements/v2.15"
@@ -33,7 +33,7 @@ updates:
       - "haxorof"
     ignore:
       - dependency-name: "*"
-        update-types: ["version-update:semver-minor"]
+        update-types: ["version-update:semver-minor", "version-update:semver-major"]
   # Maintain dependencies for Python PiP (v2.16)
   - package-ecosystem: pip
     directory: "/requirements/v2.16"
