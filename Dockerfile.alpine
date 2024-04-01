@@ -9,6 +9,8 @@ ARG gosu_version
 
 ENV LANG en_US.UTF-8
 ENV LC_ALL en_US.UTF-8
+ENV VIRTUAL_ENV=/.env
+ENV PATH=$VIRTUAL_ENV/bin:$PATH
 
 ONBUILD USER root
 
@@ -29,6 +31,7 @@ RUN apk update \
     && wget -O /usr/bin/gosu "https://github.com/tianon/gosu/releases/download/$gosu_version/gosu-amd64" \
     && chmod +x /usr/bin/gosu \
     && gosu nobody true \
+    && python3 -m venv ${VIRTUAL_ENV} \
     && python3 -m pip install --no-cache-dir --upgrade pip \
     && python3 -m pip install --no-cache-dir -r requirements.txt \
     && wget -O - https://download.docker.com/linux/static/stable/x86_64/docker-${docker_version}.tgz | tar -xz -C /usr/lib \
