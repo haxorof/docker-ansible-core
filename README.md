@@ -12,7 +12,6 @@ If you find bugs or got improvements of the container, feel free to submit it [h
 
 This repos stop supporting versions as it gets EOL according to [Ansible - Releases and maintenance](https://docs.ansible.com/ansible/latest/reference_appendices/release_and_maintenance.html).
 
-
 ## Simple Tags
 
 - `v2.16-almalinux`
