@@ -37,6 +37,7 @@ RUN apt-get clean \
     && python3 -m venv ${VIRTUAL_ENV} \
     && python3 -m pip install --no-cache-dir --break-system-packages --upgrade pip \
     && python3 -m pip install --no-cache-dir --break-system-packages -r requirements.txt \
+    && chmod -R +wr ${VIRTUAL_ENV} \
     && wget -O - https://download.docker.com/linux/static/stable/x86_64/docker-${docker_version}.tgz | tar -xz -C /usr/lib \
     && ln -s /usr/lib/docker/docker /usr/bin/docker \
     && mkdir -p /etc/ansible/roles \

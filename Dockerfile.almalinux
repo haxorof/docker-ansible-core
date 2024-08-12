@@ -39,6 +39,7 @@ RUN dnf install -y epel-release \
     && python3.11 -m venv ${VIRTUAL_ENV} \
     && python3.11 -m pip install --no-cache-dir --upgrade pip \
     && python3.11 -m pip install --no-cache-dir -r requirements.txt \
+    && chmod -R +wr ${VIRTUAL_ENV} \
     && curl https://download.docker.com/linux/static/stable/x86_64/docker-${docker_version}.tgz | tar -xz -C /usr/lib \
     && ln -s /usr/lib/docker/docker /usr/bin/docker \
     && mkdir -p /etc/ansible/roles \
