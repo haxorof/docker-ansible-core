@@ -27,7 +27,7 @@ jobs:
         version: [v2.17, v2.18, v2.19]
     steps:
       - name: Checkout
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
 
       - name: Prepare
         id: prep
@@ -108,7 +108,7 @@ jobs:
     if: ${{ endsWith(github.ref, '/main') }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
 
       - name: Docker Hub Description
         uses: peter-evans/dockerhub-description@v5
