@@ -6,36 +6,34 @@
 
 Ansible Core with additions.
 
-**Note!** This image is called `ansible-core` but installs `ansible-base` for v2.10 (EOL). For later versions, v2.11 and onwards the `ansible-core` package is installed.
-
 If you find bugs or got improvements of the container, feel free to submit it [here](https://github.com/haxorof/docker-ansible-core/issues).
 
 This repos stop supporting versions as it gets EOL according to [Ansible - Releases and maintenance](https://docs.ansible.com/ansible/latest/reference_appendices/release_and_maintenance.html).
 
 ## Simple Tags
 
+- `v2.20-almalinux`
+- `v2.20-alpine`
+- `v2.20-ubuntu`
 - `v2.19-almalinux`
 - `v2.19-alpine`
 - `v2.19-ubuntu`
 - `v2.18-almalinux`
 - `v2.18-alpine`
 - `v2.18-ubuntu`
-- `v2.17-almalinux`
-- `v2.17-alpine`
-- `v2.17-ubuntu`
 
 ## Shared Tags
 
-- `v2.19`, `latest-alpine`, `latest`
+- `v2.20`, `latest-alpine`, `latest`
+  - `v2.20-alpine`
+- `v2.19`
   - `v2.19-alpine`
 - `v2.18`
   - `v2.18-alpine`
-- `v2.17`
-  - `v2.17-alpine`
 - `latest-almalinux`
-  - `v2.19-almalinux`
+  - `v2.20-almalinux`
 - `latest-ubuntu`
-  - `v2.19-ubuntu`
+  - `v2.20-ubuntu`
 
 ## Additions
 
