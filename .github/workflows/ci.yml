@@ -34,6 +34,7 @@ jobs:
         run: |
           cp requirements/${MATRIX_VERSION}/requirements.txt requirements/requirements.txt
           TAGS="${IMAGE_NAME}:${MATRIX_VERSION}-${MATRIX_OS}"
+          TEST_TAG="${TAGS}"
           if [[ "$MATRIX_OS" == "$LATEST_OS" ]]; then
             TAGS="${TAGS},${IMAGE_NAME}:$MATRIX_VERSION"
             if [[ "$MATRIX_VERSION" == "$LATEST_VERSION" ]]; then
@@ -43,6 +44,7 @@ jobs:
             TAGS="${TAGS},${IMAGE_NAME}:latest-${MATRIX_OS}"
           fi
           echo "tags=${TAGS}" >> $GITHUB_OUTPUT
+          echo "test_tag=${TEST_TAG}" >> $GITHUB_OUTPUT
           echo "created=$(date -u +'%Y-%m-%dT%H:%M:%SZ')" >> $GITHUB_OUTPUT
         env:
           MATRIX_OS: ${{ matrix.os }}
