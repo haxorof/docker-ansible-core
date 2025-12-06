@@ -17,7 +17,8 @@ ONBUILD USER root
 COPY requirements/requirements.txt ./requirements.txt
 
 RUN apk update \
-    && apk add --no-cache linux-headers \
+    && apk add --no-cache \
+    python3 \
     openssh \
     sshpass \
     git \
