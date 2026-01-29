@@ -14,7 +14,7 @@ env:
   LATEST_OS: alpine
   LATEST_VERSION: v2.20
   # https://download.docker.com/linux/static/stable/x86_64/
-  DOCKER_CLI_VERSION: "29.1.2"
+  DOCKER_CLI_VERSION: "29.2.0"
   # https://github.com/tianon/gosu/releases/
   GOSU_VERSION: "1.19"
 
