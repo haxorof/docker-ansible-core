@@ -30,6 +30,9 @@ RUN apt-get clean \
     curl \
     tzdata \
     cargo \
+    # 1. Clean up package manager caches and downloaded packages immediately
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/* \
     # install gosu for a better su+exec command (remove sudo if this works)
     && wget -O /usr/bin/gosu "https://github.com/tianon/gosu/releases/download/$gosu_version/gosu-amd64" \
     && chmod +x /usr/bin/gosu \
